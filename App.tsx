@@ -646,15 +646,6 @@ const App: React.FC = () => {
               </div>
             )}
 
-            {state.data.length > 0 && (
-              <button 
-                onClick={downloadFile}
-                className="flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors font-medium text-sm shadow-sm"
-              >
-                <Download size={18} />
-                Download Result
-              </button>
-            )}
             <button 
               onClick={() => fileInputRef.current?.click()}
               onDragOver={(e) => {
@@ -676,7 +667,7 @@ const App: React.FC = () => {
                   : (isDragging ? 'bg-orange-700 scale-105' : 'bg-orange-500 hover:bg-orange-600')
               }`}
             >
-              <Upload size={18} />
+              <Download size={18} />
               {isDraggingOnButton ? 'Drop file here' : 'Upload File'}
             </button>
             <input 
@@ -686,6 +677,16 @@ const App: React.FC = () => {
               className="hidden" 
               accept=".csv, .xlsx, .xls"
             />
+
+            {state.data.length > 0 && (
+              <button 
+                onClick={downloadFile}
+                className="flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors font-medium text-sm shadow-sm"
+              >
+                <Upload size={18} />
+                Download Result
+              </button>
+            )}
           </div>
         </div>
       </header>
@@ -760,7 +761,7 @@ const App: React.FC = () => {
                       className="w-full flex items-center justify-center gap-2 bg-blue-50 hover:bg-blue-500 hover:text-white text-blue-600 px-4 py-2.5 rounded-lg border border-blue-100 transition-all font-bold text-xs disabled:opacity-50 group"
                     >
                       <Split size={14} /> 
-                      Auto-Split All Params
+                      Auto-Split UTM
                       <ChevronRight size={12} className="group-hover:translate-x-1 transition-transform ml-1" />
                     </button>
                   </div>
