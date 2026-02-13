@@ -1,0 +1,5 @@
+{
+  "name": "Audika UTM Master",
+  "description": "A professional tool for marketing technologists to split UTM parameters from URLs into individual columns and merge them back. Includes an AI Python expert for generating Pandas scripts.",
+  "requestFramePermissions": []
+}
